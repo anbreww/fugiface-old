@@ -1,0 +1,26 @@
+taps
+  id
+  name
+  beer_id
+
+beers
+  id
+  name
+  style
+  description
+  abv
+  ibu
+  volume
+  date_brewed
+  date_tapped
+  date_retired
+
+history
+  list of beers where date_retired non null
+
+upcoming brews
+  list of beers where date_tapped null or > today
+  (consider that a beer might not be brewed yet)
+
+
+  
