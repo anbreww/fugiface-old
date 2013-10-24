@@ -72,7 +72,7 @@ Then create a new config file for the app
 With the following contents
 
     [program:fugidaire]
-    command=/home/andrew/webapps/fugidaire/venv/bin/uwsgi -s /tmp/uwsgi.sock -w fugidaire:app -H /home/andrew/webapps/fugidaire/venv --chmod-socket=666
+    command=/home/andrew/webapps/fugidaire/venv/bin/uwsgi -s /tmp/uwsgi.sock -w fugidaire:app -H /home/andrew/webapps/fugidaire/venv --chmod-socket=666 --touch-reload=/home/andrew/webapps/fugidaire/reload.ini
     directory=/home/andrew/webapps/fugidaire
     autostart=true
     autorestart=true
@@ -89,6 +89,10 @@ Then restart supervisord
     ps -A | grep supervisor
     kill <id>
     sudo supervisord -c /etc/supervisor/supervisord.conf
+
+To reload the app once it has been started, use the following command :
+
+    touch reload.ini
 
 Source for uwsgi/supervisor/nginx : http://flaviusim.com/blog/Deploying-Flask-with-nginx-uWSGI-and-Supervisor/
 

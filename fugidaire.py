@@ -58,21 +58,7 @@ class Tap(db.Model):
 
 @app.route('/')
 def index():
-    beerlist = [
-            ("Zombie Dust", "Double IPA", "6.0", "120",
-        "Powerfully hopped double IPA with loads of citrusy Citra hops."),
-            ("Centennial Water", "American Blonde", "4.0", "30",
-        "A very light and refreshing blonde, with a touch of Centennial hops."),
-            ("Bacon Juice", "Smoked Ale", "5.2", "20",
-        "Slightly hazy ale that smells and tastes like liquid bacon."),
-            ("OctoberAle", "Oktoberfest Ale", "6.5", "40",
-        "An oktoberfest recipe fermented with an ale yeast"),
-            ("Anbrew ESB", "Scottish ESB", "4.7", "25",
-        "Clean and dry, this British-style bitter is <i>extra special</i>"),
-            ]
-    beers = [dict(name=beer[0], type=beer[1], abv=beer[2],
-        ibu=beer[3], description=beer[4]) for beer in
-        beerlist]
+    beers = Beer.query.all() # TODO : only get beers that are on tap!
     return render_template('index.html', beers=beers)
 
 @app.route('/about')
