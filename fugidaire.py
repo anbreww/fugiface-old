@@ -58,7 +58,7 @@ class Tap(db.Model):
 
 @app.route('/')
 def index():
-    beers = Beer.query.all() # TODO : only get beers that are on tap!
+    beers = [tap.beer for tap in Tap.query.order_by(Tap.position).all()]
     return render_template('index.html', beers=beers)
 
 @app.route('/about')

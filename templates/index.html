@@ -19,7 +19,7 @@
         {% else %}
         <div class="col-lg-2">
         {% endif %}
-        <h1 class="text-center">{{ loop.index }}</h1>
+        <h1 class="text-center">{{ beer.tap.name }}</h1>
         <hr /><h4>{{ beer.name }}</h4><hr />
         <h5>{{ beer.type }}</h5>
         <p>{{ beer.description|safe }}</p>
