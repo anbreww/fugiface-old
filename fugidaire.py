@@ -9,7 +9,6 @@ from datetime import date, datetime
 app = Flask(__name__, instance_relative_config=True)
 app.config.from_object('default_settings')
 app.config.from_pyfile('application.cfg', silent=True)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/test.db'
 db = SQLAlchemy(app)
 
 class Beer(db.Model):
