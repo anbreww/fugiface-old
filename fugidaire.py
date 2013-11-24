@@ -6,7 +6,9 @@ from flask.ext.sqlalchemy import SQLAlchemy
 
 from datetime import date, datetime
 
-app = Flask(__name__)
+app = Flask(__name__, instance_relative_config=True)
+app.config.from_object('default_settings')
+app.config.from_pyfile('application.cfg', silent=True)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/test.db'
 db = SQLAlchemy(app)
 
@@ -66,6 +68,14 @@ def admin():
     beers = [tap.beer for tap in Tap.query.order_by(Tap.position).all()]
     return render_template('admin.html', beers=beers)
 
+@app.route('/debug')
+def debug():
+    config_strings = [key + " = " + str(value) for key, value in app.config.items()]
+    if app.debug:
+        return '<br/>'.join(config_strings)
+    else:
+        return "Sorry, not in debug mode!"
+
 @app.route('/new')
 def new_beer():
     '''Create a new beer from a form'''
@@ -75,5 +85,5 @@ def new_beer():
 
 if __name__ == '__main__':
     app.debug = True
-    app.run(host='::')
+    app.run(host='::', port=9999)
 

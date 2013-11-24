@@ -1,3 +1,6 @@
 *.pyc
 venv/
 *.swp
+instance/
+logs/
+*_uwsgi.ini

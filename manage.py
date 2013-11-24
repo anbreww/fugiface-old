@@ -34,7 +34,7 @@ def history(operation):
 
                 Beer("Vanilla Porter", date_retired=date(2013, 4, 1)),
 
-                Beer("Petite Saison d'Été", date_retired=date(2013, 4, 1)),
+                Beer("Petite Saison d'Été".decode('utf-8'), date_retired=date(2013, 4, 1)),
 
                 Beer("Centennial Water", date_retired=date(2013, 10, 1))
                 ]
