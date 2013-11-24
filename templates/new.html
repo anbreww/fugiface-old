@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+  <head>
+  <meta charset="UTF-8">
+  <div class="row "></div>
+  <title>New Beer</title>
+  <link rel="stylesheet" href="static/css/bootstrap.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="text-center">
+        <h1>Taplist administration</h1>
+        <p>The latest brews on tap, served from the Fûgidaire</p>
+      </div>
+
+      <div class="row">
+         <div class="col-md-8 col-md-offset-3"> 
+          <!-- <div class="col-lg-1 col-centered"> -->
+          {% include 'beer_form.html' %}
+        </div>
+      </div>
+
+    <div class="text-center navbar navbar-inner navbar-fixed-bottom">
+        <p class="muted credit">2013 - Andrew Watson</p>
+    </div>
+
+    {% include 'analytics.html' %}
+
+</body></html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+  <head>
+  <meta charset="utf-8">
+  <div class="row "></div>
+  <title>Fûgidaire Admin</title>
+  <link rel="stylesheet" href="static/css/bootstrap.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="text-center">
+        <h1>Taplist administration</h1>
+        <p>The latest brews on tap, served from the Fûgidaire</p>
+      </div>
+      <div class="row">
+        <div class="col-lg-4">
+            <h2>Upcoming brews</h2>
+            <p>add a button here to create a new beer</p>
+            <ul>
+            {% for beer in beers %}
+            <li><b>Tap {{ beer.tap.name }} </b>: {{ beer.name }} <br />
+            <i>{{ beer.style }}</i><br />
+            {{ beer.abv }}% ABV / {{ beer.ibu }} IBU / {{ beer.volume }}L</li>
+            {% endfor %}
+            </ul>
+        </div>
+        <div class="col-lg-4">
+            <h2>Beers currently on tap</h2>
+            <p>This list should be sortable with jquery</p>
+            <ul>
+            {% for beer in beers %}
+                <li><b>Tap {{ beer.tap.name }} </b>: {{ beer.name }} ({{ beer.style }})</li>
+            {% endfor %}
+            </ul>
+        </div> <!-- row -->
+        <div class="col-lg-4">
+            <h2>Retired Beers</h2>
+            <p>This list is sorted by date_retired</p>
+            <ul>
+            {% for beer in beers %}
+                <li><b>Tap {{ beer.tap.name }} </b>: {{ beer.name }} ({{ beer.style }})</li>
+            {% endfor %}
+            </ul>
+        </div> <!-- row -->
+    </div>
+    </div>
+
+    <div class="text-center navbar navbar-inner navbar-fixed-bottom">
+        <p class="muted credit">2013 - Andrew Watson</p>
+    </div>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-41261872-2', 'anbrew.ch');
+    ga('send', 'pageview');
+
+  </script>
+</body></html>

@@ -1,3 +1,5 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
 from flask.ext.script import Manager
 from flask.ext.migrate import Migrate, MigrateCommand
 
@@ -9,6 +11,41 @@ manager = Manager(app)
 manager.add_command('db', MigrateCommand)
 
 from datetime import date, timedelta
+
+@manager.command
+def history(operation):
+    if operation == 'create':
+        print "Filling database with historical beer data"
+        from fugidaire import Beer, Tap
+        beers = [
+                Beer("Haus Pale Ale", date_retired=date(2013, 4, 1)),
+
+                Beer("Simcoe IPA", date_retired=date(2013, 6, 17)),
+
+                Beer("Wee Peaty", date_retired=date(2013, 7, 27)),
+
+                Beer("Chinook IPA", date_retired=date(2013, 8, 8)),
+
+                Beer("Diploma Supplement", style="Belgian Wit", abv=4.5, ibu=30,
+                description="Light bodied but strong tasting Orange and Coriander wit",
+                volume=19, date_retired=date(2013, 8, 15)),
+
+                Beer("Citra Pale Ale", date_retired=date(2013, 8, 23)),
+
+                Beer("Vanilla Porter", date_retired=date(2013, 4, 1)),
+
+                Beer("Petite Saison d'Été", date_retired=date(2013, 4, 1)),
+
+                Beer("Centennial Water", date_retired=date(2013, 10, 1))
+                ]
+        for beer in beers:
+            db.session.add(beer)
+
+        db.session.commit()
+
+
+
+
 
 @manager.command
 def dummy(operation):

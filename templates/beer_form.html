@@ -1,0 +1,116 @@
+<form class="form-horizontal">
+<fieldset>
+
+<!-- Form Name -->
+<legend>New Beer</legend>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="name">Beer Name</label>
+  <div class="col-md-4">
+    <input id="name" name="name" type="text" placeholder="AnBrew Extra Special Bitter" class="form-control input-md">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="style">Style</label>
+  <div class="col-md-4">
+    <input id="style" name="style" type="text" placeholder="English ESB" class="form-control input-md">
+    
+  </div>
+</div>
+
+<!-- Textarea -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="description">Description</label>
+  <div class="col-md-4">                     
+    <textarea class="form-control" id="description" name="description"></textarea>
+  </div>
+</div>
+
+<!-- Appended Input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="abv">Alcohol</label>
+  <div class="col-md-2">
+    <div class="input-group">
+      <input id="abv" name="abv" class="form-control input-md" placeholder="5.0" type="text">
+      <span class="input-group-addon">% ABV</span>
+    </div>
+    
+  </div>
+</div>
+
+<!-- Appended Input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="ibu">Bitterness</label>
+  <div class="col-md-2">
+    <div class="input-group">
+      <input id="ibu" name="ibu" class="form-control input-md" placeholder="80" type="text">
+      <span class="input-group-addon">IBU</span>
+    </div>
+    
+  </div>
+</div>
+
+<!-- Appended Input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="volume">Volume</label>
+  <div class="col-md-2">
+    <div class="input-group">
+      <input id="volume" name="volume" class="form-control input-md" placeholder="19" type="text">
+      <span class="input-group-addon">Litres</span>
+    </div>
+    
+  </div>
+</div>
+
+<!-- Appended Input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="brewdate">Brewed</label>
+  <div class="col-md-3">
+    <div class="input-group">
+      <input id="brewdate" name="brewdate" class="form-control input-md" placeholder="tomorrow" type="text">
+      <span class="input-group-addon">date</span>
+    </div>
+    <p class="help-block">date can be left empty</p>
+  </div>
+</div>
+
+<!-- Appended Input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="date_tapped">Tapped</label>
+  <div class="col-md-3">
+    <div class="input-group">
+      <input id="date_tapped" name="date_tapped" class="form-control input-md" placeholder="in two weeks" type="text">
+      <span class="input-group-addon">date</span>
+    </div>
+    <p class="help-block">date can be empty or in the future</p>
+  </div>
+</div>
+
+<!-- Appended Input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="date_retired">Retired</label>
+  <div class="col-md-3">
+    <div class="input-group">
+      <input id="date_retired" name="date_retired" class="form-control input-md" placeholder="in two months" type="text">
+      <span class="input-group-addon">date</span>
+    </div>
+    <p class="help-block">date when the keg was finished</p>
+  </div>
+</div>
+
+<!-- Submit Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="create"></label>
+  <div class="col-md-4">
+    <button id="create" name="create" class="btn btn-primary">Create Beer</button>
+  </div>
+</div>
+
+
+</fieldset>
+</form>
+

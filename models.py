@@ -1,14 +1,4 @@
-#!/usr/bin/python
-# -*- coding: utf-8 -*-
-
-from flask import Flask, render_template
-from flask.ext.sqlalchemy import SQLAlchemy
-
-from datetime import date, datetime
-
-app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/test.db'
-db = SQLAlchemy(app)
+from fugidaire import db
 
 class Beer(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -55,25 +45,3 @@ class Tap(db.Model):
 
     def __repr__(self):
         return '<Tap %r>' % self.position
-
-@app.route('/')
-def index():
-    beers = [tap.beer for tap in Tap.query.order_by(Tap.position).all()]
-    return render_template('index.html', beers=beers)
-
-@app.route('/admin')
-def admin():
-    beers = [tap.beer for tap in Tap.query.order_by(Tap.position).all()]
-    return render_template('admin.html', beers=beers)
-
-@app.route('/new')
-def new_beer():
-    '''Create a new beer from a form'''
-    return render_template('new.html')
-
-# add post method to submit beer, look at WTForms?
-
-if __name__ == '__main__':
-    app.debug = True
-    app.run(host='::')
-
