@@ -16,7 +16,7 @@ from datetime import date, timedelta
 def history(operation):
     if operation == 'create':
         print "Filling database with historical beer data"
-        from fugidaire import Beer, Tap
+        from models import Beer, Tap
         beers = [
                 Beer("Haus Pale Ale", date_retired=date(2013, 4, 1)),
 
@@ -52,7 +52,7 @@ def dummy(operation):
     '''Create dummy data to fill taps'''
     if operation == 'create':
         print "Generating dummy data to fill our taps"
-        from fugidaire import Beer, Tap
+        from models import Beer, Tap
         beers = [
                 Beer("Zombie Dust", style="Double IPA", abv=6.0, ibu=120,
                     description="Powerfully hopped double IPA with loads of citrusy Citra hops.", volume=19),

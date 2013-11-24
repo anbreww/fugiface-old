@@ -1,3 +1,5 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
 from fugidaire import db
 
 class Beer(db.Model):

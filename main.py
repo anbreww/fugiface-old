@@ -1,0 +1,9 @@
+from fugidaire import app, db
+
+from models import *
+from views import *
+
+if __name__ == '__main__':
+    app.debug = True
+    app.run(host='::', port=9999)
+
