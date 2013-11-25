@@ -97,3 +97,7 @@ To reload the app once it has been started, use the following command :
 Source for uwsgi/supervisor/nginx : http://flaviusim.com/blog/Deploying-Flask-with-nginx-uWSGI-and-Supervisor/
 
 
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/tunebird/fugiface/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
